@@ -1,0 +1,28 @@
+BasedOnStyle: LLVM
+
+# rules, sort by name
+AlignAfterOpenBracket: BlockIndent
+AlignEscapedNewlines: Left
+AlignOperands: DontAlign
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: Yes
+BinPackArguments: false
+BinPackParameters: false
+BreakAfterReturnType: ExceptShortType
+BreakBeforeBinaryOperators: None
+BreakBeforeBraces: Attach
+ColumnLimit: 120
+CompactNamespaces: false
+EmptyLineBeforeAccessModifier: LogicalBlock
+FixNamespaceComments: false
+IndentAccessModifiers: false
+IndentPPDirectives: BeforeHash
+IndentWidth: 4
+NamespaceIndentation: All
+PointerAlignment: Left
+UseTab: Never
+BreakConstructorInitializers: AfterColon
+SpaceBeforeCpp11BracedList: true
