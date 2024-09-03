@@ -1,3 +1,5 @@
+// This file is part of bunraku - A 2D animation library for making games with C++23
+// See: https://github.com/atomicptr/bunraku
 #include "bunraku.hpp"
 
 #include <cstdlib>
@@ -127,6 +129,11 @@ void bunraku::Animation::flip_h() {
 
 void bunraku::Animation::flip_v() {
     m_flip_v = !m_flip_v;
+}
+
+void bunraku::Animation::play() {
+    m_playing = true;
+    m_index = 0;
 }
 
 bool bunraku::Animation::is_flipped_h() const {

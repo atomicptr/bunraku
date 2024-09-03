@@ -1,3 +1,5 @@
+// This file is part of bunraku - A 2D animation library for making games with C++23
+// See: https://github.com/atomicptr/bunraku
 #pragma once
 
 #include <functional>
@@ -71,6 +73,7 @@ namespace bunraku {
         void update(float dt);
         const FrameRect& current_frame() const;
 
+        void play();
         void resume();
         void pause();
 

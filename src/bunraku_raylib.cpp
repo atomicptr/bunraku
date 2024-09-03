@@ -1,3 +1,5 @@
+// This file is part of bunraku - A 2D animation library for making games with C++23
+// See: https://github.com/atomicptr/bunraku
 #include "bunraku_raylib.hpp"
 
 void bunraku::raylib::draw(const Animation& anim, Texture2D& texture, float x, float y, float rotation, Color color) {

@@ -14,25 +14,25 @@ int main() {
 
     auto spinning = std::vector<bunraku::Animation> {
         bunraku::Animation {g32.frames("0-7", 0), 0.1},
-        bunraku::Animation {g32.frames(17, "7-10", 17, "9-6"), 0.2},
+        bunraku::Animation {g32.frames(17, "7-10", 17, "9-6"), 0.2f},
         bunraku::Animation {g32.frames("0-7", 1), 0.3},
-        bunraku::Animation {g32.frames(18, "7-10", 18, "9-6"), 0.4},
+        bunraku::Animation {g32.frames(18, "7-10", 18, "9-6"), 0.4f},
         bunraku::Animation {g32.frames("0-7", 2), 0.5},
-        bunraku::Animation {g32.frames(19, "7-10", 19, "9-6"), 0.6},
+        bunraku::Animation {g32.frames(19, "7-10", 19, "9-6"), 0.6f},
         bunraku::Animation {g32.frames("0-7", 3), 0.7},
-        bunraku::Animation {g32.frames(20, "7-10", 20, "9-6"), 0.8},
+        bunraku::Animation {g32.frames(20, "7-10", 20, "9-6"), 0.8f},
         bunraku::Animation {g32.frames("0-7", 4), 0.9}
     };
 
     auto g64 = bunraku::Grid{64, 64, 299, 101, 2};
 
-    auto plane = bunraku::Animation{g64.frames(0, "0-2"), 0.1};
-    auto seaplane = bunraku::Animation{g64.frames("1-3", 2), 0.1};
+    auto plane = bunraku::Animation{g64.frames(0, "0-2"), 0.1f};
+    auto seaplane = bunraku::Animation{g64.frames("1-3", 2), 0.1f};
     auto seaplane_angle = 0.0f;
 
     auto gs = bunraku::Grid{32, 98, 366, 102, 1};
 
-    auto submarine = bunraku::Animation{gs.frames("0-6", 0, "5-2", 0), 0.5};
+    auto submarine = bunraku::Animation{gs.frames("0-6", 0, "5-2", 0), 0.5f};
 
     while (!WindowShouldClose()) {
         auto dt = GetFrameTime();
