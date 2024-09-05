@@ -1,6 +1,6 @@
 # bunraku (文楽)
 
-A 2D animation library for making games with C++23
+A header only 2D animation library for making games with C++23
 
 Inspired by the LÖVE library [anim8](https://github.com/kikito/anim8) and the Odin library [anima](https://github.com/atomicptr/anima).
 
