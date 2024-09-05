@@ -31,7 +31,7 @@ namespace bunraku {
     };
 
     namespace internal {
-        auto split(const std::string& str, char delimiter) {
+        inline auto split(const std::string& str, char delimiter) {
             std::vector<std::string> tokens;
             std::string token;
             std::istringstream token_stream(str);
@@ -43,7 +43,7 @@ namespace bunraku {
             return tokens;
         }
 
-        Interval parse_interval_string(std::string interval_str) {
+        inline Interval parse_interval_string(std::string interval_str) {
             auto parts = split(interval_str, '-');
             assert(parts.size() == 2, "Could not parse interval string from, expected format 'X-Y'");
 
@@ -53,7 +53,7 @@ namespace bunraku {
             return {a, b, a < b};
         }
 
-        Interval parse_interval(IntervalT interval) {
+        inline Interval parse_interval(IntervalT interval) {
             if (std::holds_alternative<Interval>(interval)) {
                 return std::get<Interval>(interval);
             } else if (std::holds_alternative<int>(interval)) {

@@ -10,7 +10,7 @@
 namespace bunraku::raylib {
 
     template<typename T>
-    void draw(const FSM<T>& fsm, Texture2D texture, float x, float y, float rotation = 0.0f, Color color = WHITE) {
+    inline void draw(const FSM<T>& fsm, Texture2D texture, float x, float y, float rotation = 0.0f, Color color = WHITE) {
         draw(fsm.current_animation(), texture, x, y, rotation, color);
     }
 }

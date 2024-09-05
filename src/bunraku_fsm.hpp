@@ -6,12 +6,15 @@
 #include <unordered_map>
 
 #include "bunraku.hpp"
-#include "rapture.hpp"
+
+#if !defined(assert) || !defined(unreachable)
+    #include "rapture.hpp"
+#endif
 
 namespace bunraku {
-    template<typename T>
+    template <typename T>
     class FSM {
-    public:
+      public:
         FSM() : current({}), states({}) {}
 
         void add(T ident, Animation animation) {
@@ -57,7 +60,8 @@ namespace bunraku {
             assert(states.contains(current.value()), "Unknown animation");
             return states.at(current.value());
         }
-    private:
+
+      private:
         std::optional<T> current;
         std::unordered_map<T, Animation> states;
     };

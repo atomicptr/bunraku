@@ -7,7 +7,7 @@
 #include "bunraku.hpp"
 
 namespace bunraku::raylib {
-    void draw(const Animation& anim, Texture2D& texture, float x, float y, float rotation = 0.0, Color color = WHITE) {
+    inline void draw(const Animation& anim, Texture2D& texture, float x, float y, float rotation = 0.0, Color color = WHITE) {
         auto& frame = anim.current_frame();
 
         auto flip_x = anim.is_flipped_v() ? -1.0f : 1.0f;
