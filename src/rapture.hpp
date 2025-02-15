@@ -8,14 +8,7 @@
     #define RAPTURE_PRINT_FUNC(...) std::println(stderr, __VA_ARGS__)
 #endif
 
-#ifdef assert
-    #ifndef RAPTURE_QUIET
-        #warning "rapture: 'assert' is already defined and has been #undef'd"
-    #endif
-    #undef assert
-#endif
-
-#define assert(condition, ...)                                          \
+#define rpt_assert(condition, ...)                                          \
     if (!(condition)) {                                                 \
         auto rapture_loc = std::source_location::current();             \
         RAPTURE_PRINT_FUNC("");                                         \
@@ -31,14 +24,7 @@
         std::abort();                                                   \
     }
 
-#ifdef expect
-    #ifndef RAPTURE_QUIET
-        #warning "rapture: 'expect' is already defined and has been #undef'd"
-    #endif
-    #undef expect
-#endif
-
-#define expect(condition)                                       \
+#define rpt_expect(condition)                                       \
     if (!(condition)) {                                         \
         auto rapture_loc = std::source_location::current();     \
         RAPTURE_PRINT_FUNC("");                                 \
@@ -53,14 +39,7 @@
         std::abort();                                           \
     }
 
-#ifdef panic
-    #ifndef RAPTURE_QUIET
-        #warning "rapture: 'panic' is already defined and has been #undef'd"
-    #endif
-    #undef panic
-#endif
-
-#define panic(...)                                                                                                  \
+#define rpt_panic(...)                                                                                                  \
     {                                                                                                               \
         auto rapture_loc = std::source_location::current();                                                         \
         RAPTURE_PRINT_FUNC(                                                                                         \
@@ -71,14 +50,7 @@
         std::abort();                                                                                               \
     }
 
-#ifdef unreachable
-    #ifndef RAPTURE_QUIET
-        #warning "rapture: 'unreachable' is already defined and has been #undef'd"
-    #endif
-    #undef unreachable
-#endif
-
-#define unreachable()                                                                                       \
+#define rpt_unreachable()                                                                                       \
     {                                                                                                       \
         auto rapture_loc = std::source_location::current();                                                 \
         RAPTURE_PRINT_FUNC(                                                                                 \
@@ -93,14 +65,7 @@
         std::abort();                                                                                       \
     }
 
-#ifdef unimplemented
-    #ifndef RAPTURE_QUIET
-        #warning "rapture: 'unimplemented' is already defined and has been #undef'd"
-    #endif
-    #undef unimplemented
-#endif
-
-#define unimplemented()                                                         \
+#define rpt_unimplemented()                                                         \
     {                                                                           \
         auto rapture_loc = std::source_location::current();                     \
         RAPTURE_PRINT_FUNC(                                                     \

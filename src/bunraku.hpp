@@ -10,7 +10,7 @@
 #include <variant>
 #include <vector>
 
-#if !defined(assert) || !defined(unreachable)
+#if !defined(rpt_assert) || !defined(rpt_unreachable)
     #include "rapture.hpp"
 #endif
 
@@ -45,7 +45,7 @@ namespace bunraku {
 
         inline Interval parse_interval_string(std::string interval_str) {
             auto parts = split(interval_str, '-');
-            assert(parts.size() == 2, "Could not parse interval string from, expected format 'X-Y'");
+            rpt_assert(parts.size() == 2, "Could not parse interval string from, expected format 'X-Y'");
 
             auto a = atoi(parts[0].c_str());
             auto b = atoi(parts[1].c_str());
@@ -62,7 +62,7 @@ namespace bunraku {
             } else if (std::holds_alternative<std::string>(interval)) {
                 return parse_interval_string(std::get<std::string>(interval));
             }
-            unreachable();
+            rpt_unreachable();
         }
     }
 
