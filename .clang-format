@@ -1,6 +1,7 @@
 BasedOnStyle: LLVM
 
 # rules, sort by name
+AccessModifierOffset: -4
 AlignAfterOpenBracket: BlockIndent
 AlignEscapedNewlines: Left
 AlignOperands: DontAlign
@@ -14,6 +15,7 @@ BinPackParameters: false
 BreakAfterReturnType: ExceptShortType
 BreakBeforeBinaryOperators: None
 BreakBeforeBraces: Attach
+BreakConstructorInitializers: AfterColon
 ColumnLimit: 120
 CompactNamespaces: false
 EmptyLineBeforeAccessModifier: LogicalBlock
@@ -23,6 +25,5 @@ IndentPPDirectives: BeforeHash
 IndentWidth: 4
 NamespaceIndentation: All
 PointerAlignment: Left
-UseTab: Never
-BreakConstructorInitializers: AfterColon
 SpaceBeforeCpp11BracedList: true
+UseTab: Never

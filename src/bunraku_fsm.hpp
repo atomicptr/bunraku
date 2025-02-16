@@ -14,7 +14,7 @@
 namespace bunraku {
     template <typename T>
     class FSM {
-      public:
+    public:
         FSM() : current({}), states({}) {}
 
         void add(T ident, Animation animation) {
@@ -61,7 +61,7 @@ namespace bunraku {
             return states.at(current.value());
         }
 
-      private:
+    private:
         std::optional<T> current;
         std::unordered_map<T, Animation> states;
     };

@@ -1,8 +1,14 @@
 examples/anim8_1945/anim8_1945
 examples/cat_fighter_fsm/cat_fighter_fsm
+/compile_commands.json
+/bin
+/.cache
+/.clj-kondo
+/.lsp
+/build
 
-# Created by https://www.toptal.com/developers/gitignore/api/windows,macos,linux,c++
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,linux,c++
+# Created by https://www.toptal.com/developers/gitignore/api/c++,windows,macos,linux
+# Edit at https://www.toptal.com/developers/gitignore?templates=c++,windows,macos,linux
 
 ### C++ ###
 # Prerequisites
@@ -112,5 +118,14 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,c++
+# End of https://www.toptal.com/developers/gitignore/api/c++,windows,macos,linux
 
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml

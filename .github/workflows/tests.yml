@@ -1,0 +1,33 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        config:
+          - name: linux/gcc
+            os: ubuntu-latest
+            cc: gcc-14
+            cxx: g++-14
+          - name: linux/clang
+            os: ubuntu-latest
+            cc: clang-18
+            cxx: clang++-18
+    runs-on: ${{ matrix.config.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: extractions/setup-just@v2
+      - uses: lukka/get-cmake@latest
+      - name: test with ${{ matrix.config.name }}
+        shell: bash
+        env:
+          CC: ${{ matrix.config.cc }}
+          CXX: ${{ matrix.config.cxx }}
+        run: just build

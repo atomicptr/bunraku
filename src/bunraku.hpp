@@ -67,7 +67,7 @@ namespace bunraku {
     }
 
     class Grid {
-      public:
+    public:
         Grid(int frame_width, int frame_height, int left = 0, int top = 0, int border = 0) :
             m_frame_width(frame_width), m_frame_height(frame_height), m_left(left), m_top(top), m_border(border) {}
 
@@ -108,7 +108,7 @@ namespace bunraku {
             return frames;
         }
 
-      private:
+    private:
         int m_frame_width;
         int m_frame_height;
         int m_left;
@@ -121,7 +121,7 @@ namespace bunraku {
     using OnFinishedFn = std::function<void(Animation*)>;
 
     class Animation {
-      public:
+    public:
         Animation(
             std::vector<FrameRect> frames,
             float duration,
@@ -192,7 +192,7 @@ namespace bunraku {
             return m_flip_v;
         }
 
-      private:
+    private:
         std::vector<FrameRect> m_frames;
         float m_duration;
         bool m_playing;
