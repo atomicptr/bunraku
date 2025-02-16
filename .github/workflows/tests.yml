@@ -25,7 +25,24 @@ jobs:
       - uses: actions/checkout@v4
       - uses: extractions/setup-just@v2
       - uses: lukka/get-cmake@latest
-      - name: test with ${{ matrix.config.name }}
+
+      - name: install linux dependencies
+        if: matrix.config.os == 'ubuntu-latest'
+        shell: bash
+        run: |
+          sudo apt install \
+            libasound2-dev \
+            libgl1-mesa-dev \
+            libglu1-mesa-dev \
+            libwayland-dev \
+            libx11-dev \
+            libxcursor-dev \
+            libxi-dev \
+            libxinerama-dev \
+            libxkbcommon-dev \
+            libxrandr-dev
+
+      - name: build with ${{ matrix.config.name }}
         shell: bash
         env:
           CC: ${{ matrix.config.cc }}
